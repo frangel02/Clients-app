@@ -1,0 +1,69 @@
+<div class="card my-5">
+  <div class="card-body">
+      <div class="col-3">
+          <!-- <input  [(ngModel)]="searchText" type="text" class="form-control" placeholder="Type to filter"> -->
+      </div>
+      <div class="col">
+          <div  class="form-text text-muted"></div>
+      </div>
+
+
+
+      <div class="card my-5">
+
+
+        <input hidden type="number">
+
+        <label for="name">Name</label>
+        <input  type="text" [(ngModel)]="client.name">
+
+        <br>
+
+        <label for="email">Email</label>
+        <input id="email"  type="text" [(ngModel)]="client.email" >
+
+        <br>
+        <label for="name">Phone</label>
+        <input id="name" [(ngModel)]="client.phone" type="number">
+
+        <br>
+
+       
+
+        <br>
+        <br>
+        <br>
+
+        <label for="name">Address</label>
+
+        <table class="table table-bordered table-striped">
+
+          <button (click)="addNewAddress()">new addres</button>
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Road</th>
+              <th scope="col">City</th>
+              <th scope="col">Zip Code</th>
+              <th scope="col">Accion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let address of address">
+              
+              <td  > <label></label></td>
+              <td ><input [(ngModel)]="address.road" type="text"></td>
+              <td ><input [(ngModel)]="address.city" type="text"></td>
+              <td ><input [(ngModel)]="address.zipCode" type="text"></td>
+              
+              <td><button (click)="onUpdateAddress(address)"> Save</button></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <button (click)="save(client)" >Save all</button>
+
+      </div>
+
+
+  </div>
